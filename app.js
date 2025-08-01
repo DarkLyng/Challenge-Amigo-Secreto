@@ -1,29 +1,48 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let listaNombres = [];
 
-function asignarTextoElemento(texto, elemento) {
+function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
-    return console.log(elementoHTML);
+    return;
 }
 
-function agregarAmigo(lista, texto) {
-    let nombreAmigo = document.getElementById('listaAmigos');
-    return console.log(nombreAmigo);
-}
-
-
-function validarNombreAmigo(lista) {
-    if (nombreAmigo == "") {
-        asignarTextoElemento('p','La casilla está vacía, por favor ingrese un nombre');
+function agregarAmigo() {
+    let nombreAmigo = document.getElementById('amigo').value;
+    if (nombreAmigo === "") {
+        asignarTextoElemento('h3','La casilla está vacía, por favor ingrese un nombre.');
+        limpiarcasilla();
+        return;
+    }
+    let nombreMinuscula = nombreAmigo.toLowerCase();
+    if (listaNombres.includes(nombreMinuscula)){
+        asignarTextoElemento('h3','Ese nombre ya se ingreso, por favor ingrese otro nombre.');
     } else {
+        listaNombres.push(nombreMinuscula);
+        asignarTextoElemento('h3','');
+        limpiarcasilla();
 
+        }
+        return console.log(listaNombres);
+    }
+
+function evitarNumeros(){
+    if (nombreAmigo === parseInt(nombreAmigo) ){
+        asignarTextoElemento('h3','Ingrese un nombre, no un número.')
+        return;
+
+    } else {
+        agregarAmigo();
+        limpiarcasilla();
+        return visualizarListaAmigo(listaNombres);
     }
 }
 
 
+
 function limpiarcasilla() {
-    document.querySelector('#amigo').value = '';
+    document.getElementById('amigo').value ='';
+    return;
 }
 
 function visualizarListaAmigo(lista) { 
