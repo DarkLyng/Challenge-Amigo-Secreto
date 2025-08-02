@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let listaNombres = [];
-let nombresPorSortear = [];
+let juegoFinalizado = false
 
 function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
@@ -46,7 +46,7 @@ function visualizarListaAmigo(lista) {
     return ;
 }
 
-function sortearAmigo(lista) {
+function sortearAmigo() {
     if (listaNombres.length === 0 || listaNombres.length === 1) {
         document.getElementById('resultado').innerHTML = 'No se puede realizar el sorteo, por favor ingrese al menos dos nombres';
     } else { 
@@ -56,17 +56,17 @@ function sortearAmigo(lista) {
     return;
 }
 
-// function condicionesIniciales() {
-    // document.getElementById('listaAmigos').innerHTML = '';
-    // document.getElementById('resultado').innerHTML = '';
-    // asignarTextoElemento('h3','');
-    // limpiarcasilla();
-    // listaNombres = [];
-    // document.getElementById('amigo').value = '';
+function condicionesIniciales() {
+    document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('resultado').innerHTML = '';
+    asignarTextoElemento('h3','');
+    limpiarcasilla();
+    listaNombres = [];
+    document.getElementById('amigo').value = '';
     
-// }
+}
 
-// condicionesIniciales();
+condicionesIniciales();
 
 //pide un nombre y se ingresa en una lista
 //verificar la casilla no esté vacía, si está vacía o sale un número sale mensaje "Ingrese un nombre", si no agrega el nombre a la lista
