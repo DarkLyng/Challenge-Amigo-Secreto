@@ -2,7 +2,7 @@ Inicialmente, se agregan dos listas, una que almacene los nombres dados por el u
 
 ![rm1](https://github.com/user-attachments/assets/c478bbc1-43a3-4cf9-acbd-442f5afa5b60)
 
-Luego, se agrega una función para poder agregar un texto pequeño en la página cuando no se cumplan algunas de las condiciones necesarias del nombre dado, llamada ```asignarTextoElemento(elemento,texto)```.
+Luego, se agrega una función para poder agregar un texto pequeño en la página cuando no se cumplan algunas de las condiciones necesarias del nombre dado, llamada ```asignarTextoElemento(elemento, texto)```.
 
 ![rm2](https://github.com/user-attachments/assets/2f497f7c-b3f6-4109-8a7f-4ba8a4e60ae5)
 
