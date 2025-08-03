@@ -2,7 +2,7 @@ Inicialmente, se agregan dos listas, una que almacene los nombres dados por el u
 
 ![rm1](https://github.com/user-attachments/assets/c478bbc1-43a3-4cf9-acbd-442f5afa5b60)
 
-Luego, se agrega una función para poder agregar un texto pequeño en la página cuando no se cumplan algunas de las condiciones necesarias del nombre dado.
+Luego, se agrega una función para poder agregar un texto pequeño en la página cuando no se cumplan algunas de las condiciones necesarias del nombre dado, llamada ```asignarTextoElemento(elemento,texto)```.
 
 ![rm2](https://github.com/user-attachments/assets/2f497f7c-b3f6-4109-8a7f-4ba8a4e60ae5)
 
@@ -17,7 +17,7 @@ Se creó una función ```limpiarcasilla()``` para que vaciara la casilla donde s
 
 ![rm4](https://github.com/user-attachments/assets/07627a90-3976-4136-9c43-cc845419fa2d)
 
-Luego, se creó otra función ```visualizarListaAmigo()``` que por medio de un for lograba agregar todos lo nombres dados en una lista con el id de ```'listaAmigos'```.
+Luego, se creó otra función ```visualizarListaAmigo(lista)``` que por medio de un for lograba agregar todos lo nombres dados en una lista con el id de ```'listaAmigos'```.
 
 ![rm5](https://github.com/user-attachments/assets/129eb0c2-4c94-49e7-98d3-83d79f464be6)
 
