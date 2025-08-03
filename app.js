@@ -1,6 +1,6 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+
 let listaNombres = [];
-let juegoFinalizado = false
+let nombreSorteado = [];
 
 function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
@@ -22,7 +22,7 @@ function agregarAmigo() {
         
         if (listaNombres.includes(nombreMinuscula)){
             asignarTextoElemento('h3','Ese nombre ya se ingreso, por favor ingrese otro nombre.');
-        
+            limpiarcasilla();
         } else {
             listaNombres.push(nombreMinuscula);
             document.getElementById('listaAmigos').innerHTML = "";
@@ -47,12 +47,26 @@ function visualizarListaAmigo(lista) {
 }
 
 function sortearAmigo() {
-    if (listaNombres.length === 0 || listaNombres.length === 1) {
-        document.getElementById('resultado').innerHTML = 'No se puede realizar el sorteo, por favor ingrese al menos dos nombres';
-    } else { 
-        let amigoRandom = Math.floor(Math.random()*listaNombres.length);
-        document.getElementById('resultado').innerHTML = `El amigo secreto es ${listaNombres[amigoRandom]}`;
+    let amigosRestantes = [];
+    for (let i=0; i < listaNombres.length; i++) {
+        if (!nombreSorteado.includes(listaNombres[i])) {
+            amigosRestantes.push(listaNombres[i]);
+        }
     }
+
+    if (amigosRestantes.length === 0) {
+        document.getElementById('resultado').innerHTML = 'Ya se sortearon todos los nombres.';
+        return;
+    } 
+    if (amigosRestantes.length === 1 && nombreSorteado.length === 0) {
+        document.getElementById('resultado').innerHTML = 'No se puede realizar el sorteo, por favor ingrese al menos dos nombres.';
+        return;
+    }
+
+    let amigoRandom = Math.floor(Math.random()*amigosRestantes.length);
+    let nombreElegido = amigosRestantes[amigoRandom];
+    nombreSorteado.push(nombreElegido);
+    document.getElementById('resultado').innerHTML = `El amigo secreto es ${nombreElegido}`;
     return;
 }
 
@@ -62,18 +76,20 @@ function condicionesIniciales() {
     asignarTextoElemento('h3','');
     limpiarcasilla();
     listaNombres = [];
+    nombreSorteado = [];
     document.getElementById('amigo').value = '';
     
 }
 
 condicionesIniciales();
 
-//pide un nombre y se ingresa en una lista
-//verificar la casilla no esté vacía, si está vacía o sale un número sale mensaje "Ingrese un nombre", si no agrega el nombre a la lista
-//verificar que no se repita el nombre, si se repite, dice "Nombre repetido, ingrese otro", si no continua
-//guardarlo en una lista
-//limpiar la casilla
-//agregar una función en donde aparezcan todos los nombres ingresados abajo 
-//Repetir el proceso hasta que se seleccione 'sortear amigo sercreto'
-//seleccionar de forma aleatoria un nombre entre la lista de amigos y mostrarlo
-//Luego de seleccionarlo repertir todo el proceso
+//Pasos
+//1.Pide un nombre y se ingresa en una lista
+//2.Verificar la casilla no esté vacía, si está vacía o sale un número sale mensaje "Ingrese un nombre", si no agrega el nombre a la lista
+//3.Verificar que no se repita el nombre, si se repite, dice "Nombre repetido, ingrese otro", si no continua
+//4.Guardarlo en una lista
+//5.Limpiar la casilla
+//6.Agregar una función en donde aparezcan todos los nombres ingresados abajo 
+//7.Repetir el proceso hasta que se seleccione 'sortear amigo sercreto'
+//8.Seleccionar de forma aleatoria un nombre entre la lista de amigos y mostrarlo
+//9.Luego de seleccionarlo repertir todo el proceso
