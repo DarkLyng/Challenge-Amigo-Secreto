@@ -55,7 +55,7 @@ function sortearAmigo() {
     }
 
     if (amigosRestantes.length === 0) {
-        document.getElementById('resultado').innerHTML = 'Ya se sortearon todos los nombres.';
+        document.getElementById('resultado').innerHTML = 'Ya se sortearon todos los nombres, por favor reinicie el sorteo.';
         return;
     } 
     if (amigosRestantes.length === 1 && nombreSorteado.length === 0) {
